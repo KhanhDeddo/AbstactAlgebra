@@ -17,7 +17,7 @@ def Eratosthenes(n):
 
 def Control():
     while True:
-        os.system("clr")
+        os.system("cls")
         clear_output()
         print("Thuat toan sang Eratosthenes.")
         n=int(input("Nhap mot so tu nhien bat ki: "))
@@ -26,7 +26,7 @@ def Control():
         print("\nDong chuong trinh nhap:-1")
         control=input("Tiep tuc an Enter.")
         if control=="-1":     
-            os.system("clr")
+            os.system("cls")
             clear_output()
             print("Chuong trinh da dong.")
             break
