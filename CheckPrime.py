@@ -17,7 +17,7 @@ def checkPrimeNumber(n):
 
 def Control():
     while True:
-        os.system("clr")
+        os.system("cls")
         clear_output()
         print("Kiem Tra 1 so có phai la so nguyen to hay khong.")
         n=int(input("Nhap mot so nguyen bat ki: "))
@@ -25,7 +25,7 @@ def Control():
         print("\nDong chuong trinh nhap:-1")
         control=input("Tiep tuc an Enter.")
         if control=="-1":     
-            os.system("clr")
+            os.system("cls")
             clear_output()
             print("Chuong trinh da dong.")
             break
