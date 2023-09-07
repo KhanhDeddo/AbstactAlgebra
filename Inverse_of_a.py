@@ -1,5 +1,4 @@
 #TIM NGICH DAO BANG EUCLIDE MO RONG.
-#thuat toan euclid mo rong.
 def euclidExtended(a,b):
     count=0
     if a<b:
@@ -16,7 +15,6 @@ def euclidExtended(a,b):
     if count:
         x,y=y,x
     return d,x,y
-#ham tra ve kq.
 def inverse(a,m):
     d,x,y=euclidExtended(a,m)
     if d==1:
@@ -26,12 +24,10 @@ def inverse(a,m):
 
 
 #TIM NGICH DAO BANG EULER.
-#thuat toan euclid.
 def gcd(a,m):
     if m==0:
         return a
     return gcd(m,a%m)
-#danh sach so nguyen to la uoc cua m
 def primeFactorization(m):
     lis=[]
     for i in range(2,m+1):
@@ -42,32 +38,24 @@ def primeFactorization(m):
         if count:
             lis.append(i)
     return lis
-
-#Nghich dao cua a.
 def inverseOfA(a,m,lis):
     s=m
-    for i in lis:#Tinh phi(m).
+    for i in lis:
         s=s*(1-(1/i))
     return f"{a}^{int(s-1)}"
-
-#Nhi phan (phi(m)-1)
 def binary(b):
-    lis=list(map(int,b.split("^")))#Tach lay so mu.
+    lis=list(map(int,b.split("^")))
     base2=""
     while((lis[1])>0):
         base2+=str(lis[1]%2)
         lis[1]//=2
     return base2
-
-#Chuyen phi(m)-1 tu nhi phan ve dang cơ số 2: phi(m)-1=2^z+2^k+...
 def change(base2):
     lis=[]
     for i in range(len(base2)-1,-1,-1):
         if base2[i]=="1":
-            lis=[i]+lis # chèn số mu cua 2 vào đầu danh sách.
+            lis=[i]+lis
     return lis
-
-#ham tra ve kq.
 def compact(a,m,lst,result,n=0):
     if n in lst:
         result*=a
@@ -92,11 +80,11 @@ def control():
             a=int(eval(input("a = ")))
             m=int(eval(input("m = ")))
             if gcd(a,m)==1:
-                result=1 #Bien de lu nghich dao cua a khi da rut gon.
-                lis=primeFactorization(m)#danh sach so nguyen to la uoc cua m
-                b=inverseOfA(a,m,lis)#Nghich dao cua a.
-                base2=binary(b)#Nhi phan (phi(m)-1),so mu cua b.
-                lst=change(base2)#Chuyen so mu cua b tu nhi phan ve dang cơ số 2, sau do tra ve danh sach so mu cua 2.
+                result=1
+                lis=primeFactorization(m)
+                b=inverseOfA(a,m,lis)
+                base2=binary(b)
+                lst=change(base2)
                 print(f"Nghich dao cua {a} theo modulo {m} la: {compact(a,m,lst,result)}\n")
             else:
                 print(f"{a} khong co kha nghich theo modulo {m}. Vi UCLN({a},{m}) = {gcd(a,m)} != 1\n")
